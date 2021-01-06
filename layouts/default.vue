@@ -1,8 +1,18 @@
 <template>
   <div>
+    <Nav />
     <Nuxt />
   </div>
 </template>
+
+<script>
+import Nav from './partials/nav';
+export default {
+  components: {
+    Nav
+  }
+}
+</script>
 
 <style>
 html {
