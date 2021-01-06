@@ -5,13 +5,16 @@
       <Menu @clicked="navigationChange" class="mob-menu" />
       <nav :class="{ open: navigationOpen }">
         <ul>
-          <li><nuxt-link to="/">About</nuxt-link></li>
-          <li><nuxt-link to="/">Services</nuxt-link></li>
-          <li><nuxt-link to="/">Contact</nuxt-link></li>
+          <li v-for="(singleLink, index) in links" :key="index">
+            <nuxt-link :to="singleLink.page">{{ singleLink.name }}</nuxt-link>
+          </li>
         </ul>
       </nav>
-      <div @click="navigationChange" class="reset-mob-menu" 
-      :class="{ open: navigationOpen }"></div>
+      <div
+        @click="navigationChange"
+        class="reset-mob-menu"
+        :class="{ open: navigationOpen }"
+      ></div>
     </div>
   </header>
 </template>
@@ -20,12 +23,22 @@
 export default {
   data() {
     return {
-      navigationOpen: false
+      navigationOpen: false,
+      links: [
+        { page: "/about", name: "About" },
+        { page: "/services", name: "Services" },
+        { page: "/contact", name: "Contact" }
+      ]
     };
   },
   methods: {
     navigationChange() {
       this.navigationOpen = !this.navigationOpen;
+    }
+  },
+  watch: {
+    $route() {
+      this.navigationOpen = false;
     }
   }
 };
@@ -87,7 +100,7 @@ header a:hover {
   margin-left: auto;
 }
 .reset-mob-menu {
-    display: none;
+  display: none;
 }
 @media only screen and (max-width: 640px) {
   .mob-menu {
@@ -106,7 +119,7 @@ header a:hover {
     transition: width ease-in 0.3s;
   }
   nav.open {
-      width: 75%;
+    width: 75%;
   }
   nav ul {
     position: absolute;
@@ -119,17 +132,17 @@ header a:hover {
     padding: 0.5rem 0;
   }
   .reset-mob-menu {
-      display: block;
-      margin: 0;
-      width: 0;
-      height: 100vh;
-      position: fixed;
-      z-index: 5;
-      top: 0;
-      left: 0;
+    display: block;
+    margin: 0;
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
   }
   .reset-mob-menu.open {
-      width: 100%;
+    width: 100%;
   }
 }
 </style>
