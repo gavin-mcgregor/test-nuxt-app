@@ -2,7 +2,7 @@
   <header>
     <div class="inner-header">
       <nuxt-link to="/" class="logo">Logo<span>File</span></nuxt-link>
-      <Menu @clicked="navigationChange" />
+      <Menu @clicked="navigationChange" class="mob-menu" />
       <nav :class="{ open: navigationOpen }">
         <ul>
           <li><nuxt-link to="/">About</nuxt-link></li>
