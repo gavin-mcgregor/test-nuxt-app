@@ -25,6 +25,11 @@ export default {
     navigationChange() {
       this.navigationOpen = !this.navigationOpen;
     }
+  },
+  watch: {
+    $route() {
+      this.navigationOpen = false;
+    }
   }
 };
 </script>
