@@ -47,7 +47,6 @@ header {
 .logo {
   margin-right: 40px;
   display: inline-block;
-  float: left;
   text-transform: uppercase;
   font-weight: 800;
   font-size: 1.2rem;
@@ -88,6 +87,10 @@ header a:hover {
 }
 .reset-mob-menu {
     display: none;
+}
+.reset-mob-menu:hover,
+header svg:hover {
+    cursor: pointer;
 }
 @media only screen and (max-width: 640px) {
   .mob-menu {

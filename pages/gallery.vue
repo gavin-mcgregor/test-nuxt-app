@@ -4,6 +4,11 @@
 
 <script>
 export default {
+    head: {
+    script: [
+      { src: '~/assets/instaScript.js', body: true },
+    ]
+  }
 }
 </script>
 
