@@ -1,9 +1,10 @@
 <template>
   <header>
       <div class="inner-header">
-          <nuxt-link to="/" class="logo">LogoFile</nuxt-link>
+          <nuxt-link to="/" class="logo">Logo<span>File</span></nuxt-link>
+          <a class="mob-menu" href="#" onclick="mobMenu()"><Menu /></a>
           <nav>
-            <ul>
+            <ul >
                 <li><nuxt-link to="/">About</nuxt-link></li>
                 <li><nuxt-link to="/">Services</nuxt-link></li>
                 <li><nuxt-link to="/">Contact</nuxt-link></li>
@@ -15,8 +16,11 @@
 </template>
 
 <script>
+import Menu from '../../components/menu';
 export default {
-    
+  components: {
+    Menu
+  }
 }
 </script>
 
@@ -31,14 +35,24 @@ header {
     max-width: 1000px;
     width: 80%;
     margin: auto;
+    display: flex;
 }
 .logo {
     margin-right: 40px;
     display: inline-block;
     float: left;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.2rem;
+    line-height: 1;
+    align-self: baseline;
+}
+.logo span {
+    font-weight: normal;
 }
 nav {
-    float: right;
+    align-self: baseline;
+    margin-left: auto;
 }
 nav ul {
     list-style: none;
@@ -59,5 +73,36 @@ header a {
 }
 header a:hover {
     color: #999;
+}
+.mob-menu {
+    display: none;
+    align-self: baseline;
+    margin-left: auto;
+}
+@media only screen and (max-width: 640px){
+    .mob-menu {
+        display: block;
+    }
+    nav {
+        width: 0%;
+        margin: 0;
+        height: 100%;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        overflow-x: hidden;
+    }
+    nav ul {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    nav li {
+        display: block;
+        padding: 0.5rem 0;
+    }
 }
 </style>

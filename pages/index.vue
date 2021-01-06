@@ -28,7 +28,8 @@
 </template>
 
 <script>
-export default {}
+export default {
+}
 </script>
 
 <style>
@@ -69,5 +70,10 @@ export default {}
 
 .links {
   padding-top: 15px;
+}
+
+.black {
+  background-color: #333;
+  padding: 5%;
 }
 </style>
