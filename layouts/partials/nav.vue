@@ -10,6 +10,8 @@
           <li><nuxt-link to="/">Contact</nuxt-link></li>
         </ul>
       </nav>
+      <div @click="navigationChange" class="reset-mob-menu" 
+      :class="{ open: navigationOpen }"></div>
     </div>
   </header>
 </template>
@@ -89,6 +91,9 @@ header a:hover {
   align-self: baseline;
   margin-left: auto;
 }
+.reset-mob-menu {
+    display: none;
+}
 @media only screen and (max-width: 640px) {
   .mob-menu {
     display: block;
@@ -103,6 +108,10 @@ header a:hover {
     left: 0;
     background-color: #333;
     overflow-x: hidden;
+    transition: width ease-in 0.3s;
+  }
+  nav.open {
+      width: 75%;
   }
   nav ul {
     position: absolute;
@@ -113,6 +122,19 @@ header a:hover {
   nav li {
     display: block;
     padding: 0.5rem 0;
+  }
+  .reset-mob-menu {
+      display: block;
+      margin: 0;
+      width: 0;
+      height: 100vh;
+      position: fixed;
+      z-index: 5;
+      top: 0;
+      left: 0;
+  }
+  .reset-mob-menu.open {
+      width: 100%;
   }
 }
 </style>
