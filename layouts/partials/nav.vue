@@ -6,7 +6,7 @@
       <nav :class="{ open: navigationOpen }">
         <ul>
           <li><nuxt-link to="/">About</nuxt-link></li>
-          <li><nuxt-link to="/">Services</nuxt-link></li>
+          <li><nuxt-link to="Gallery">Gallery</nuxt-link></li>
           <li><nuxt-link to="/">Contact</nuxt-link></li>
         </ul>
       </nav>

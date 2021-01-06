@@ -19,6 +19,11 @@ export default {
   css: [
   ],
 
+  // Local JS Scripts
+  script: [
+    { src: '~assets/instagram-script.js' }
+  ]
+
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
   ],
