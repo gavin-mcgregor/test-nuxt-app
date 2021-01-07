@@ -51,4 +51,9 @@ html {
 .row {
   padding: 6% 0;
 }
+h1 {
+  font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
 </style>
