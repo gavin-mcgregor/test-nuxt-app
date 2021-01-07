@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        test-nuxt
+        Something new
       </h1>
     </div>
   </div>
