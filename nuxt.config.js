@@ -21,7 +21,8 @@ export default {
 
   // Local JS Scripts
   script: [
-    { src: '~assets/instagram-script.js' }
+    { src: '~/assets/instaScript.js' },
+    { src: '~/assets/iframeResizer.js' }
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
